@@ -16,9 +16,8 @@ class Trie:
 
 
     def find(self, value, dist):
-        for result in self.navigate(self.root, value, '\0', 0, range(len(value)+1), dist):
-            yield result
-   
+        return self.navigate(self.root, value, '\0', 0, range(len(value)+1), dist)
+            
     def navigate(self, node, value, ch, i, last, dist):
         row = [0] * (len(value)+1)
         row[0] = i

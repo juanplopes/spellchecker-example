@@ -43,13 +43,13 @@ class Trie:
 print 'Carregando dicionário...'
 trie = Trie()
 for line in open('ptbr.txt','r'):
-    trie.add(line[0:-1])
+    trie.add(line.strip())
 print 'Dicionário carregado.'
 
 max_distance = 2
 
 for test in iter(stdin.readline, ""):
-    words = list(trie.find(test[0:-1], max_distance))
+    words = list(trie.find(test.strip(), max_distance))
     words.sort()
     for word in words[:10]:
         print word
